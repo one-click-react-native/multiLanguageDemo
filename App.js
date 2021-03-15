@@ -17,7 +17,11 @@ const App=props=>{
   const translationGetters={
     'en-IN':()=>require("./src/translations/en.json"),
     'en':()=>require("./src/translations/en.json"),
-    'hi':()=>require("./src/translations/hi.json")
+    'hi':()=>require("./src/translations/hi.json"),
+    'ar':()=>require("./src/translations/ar.json"),
+    'ar-EG':()=>require("./src/translations/ar.json"),
+    'fr-FR':()=>require("./src/translations/fr.json"),
+    'fr':()=>require("./src/translations/fr.json"),
   }
   
   const translate=memoize(
@@ -48,6 +52,12 @@ const App=props=>{
     },
     {
       label:"Hindi"
+    },
+    {
+      label:"Arabic"
+    },
+    {
+      label:"French"
     }
   ];
 
@@ -61,6 +71,18 @@ const App=props=>{
       }else if(event.label==='Hindi'){
         setLanguageValue({
           languageTag:'hi',
+          isRTL:false
+        })
+        setOpenDialog(false)
+      }else if(event.label==='Arabic'){
+        setLanguageValue({
+          languageTag:'ar',
+          isRTL:false
+        })
+        setOpenDialog(false)
+      }else if(event.label==='French'){
+        setLanguageValue({
+          languageTag:'fr',
           isRTL:false
         })
         setOpenDialog(false)
